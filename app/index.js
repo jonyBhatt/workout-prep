@@ -2,10 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import exercises from "../assets/data/exercises.json";
 import { ExerciseList } from "../src/components/ExerciseList";
+import { Stack } from "expo-router";
 
 export default function Home() {
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{ title: "Home" }} />
       <FlatList
         data={exercises}
         contentContainerStyle={{ gap: 5 }}
@@ -20,7 +22,6 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "gainsboro",
     justifyContent: "center",
     padding: 10,
     paddingTop: 20,

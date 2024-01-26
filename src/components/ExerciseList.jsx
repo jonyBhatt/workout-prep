@@ -2,11 +2,9 @@ import { Link } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 export const ExerciseList = ({ item }) => {
   return (
-    <Link href={"/exercise"} asChild>
+    <Link href={`/${item.name}`} asChild>
       <Pressable style={styles.exerciseContainer}>
-        <Link href={"/exercise"} style={styles.exerciseName}>
-          {item.name}
-        </Link>
+        <Text style={styles.exerciseName}>{item.name}</Text>
         <Text style={styles.exerciseSubtitle}>
           <Text style={{ textTransform: "capitalize" }}>
             {item.muscle.toUpperCase()}
